@@ -14,7 +14,8 @@ def certificates():
     form = MyForm()
     if form.validate_on_submit():
         print("hihihi")
-        print(form.passw.data)
+        print(form.passw.data, type(form.passw.data))
+        
         if (form.passw.data=="0449"):
             print("Password Matched")
             #return_template('certificates.html',form=hehe)
