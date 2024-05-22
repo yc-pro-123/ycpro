@@ -16,12 +16,21 @@ def certificates():
         print("hihihi")
         print(form.passw.data, type(form.passw.data))
         
+        if (str(form.passw.data)=="401"):
+            print("Password Matched")
+            #return_template('certificates.html',form=hehe)
+            return redirect("https://1drv.ms/p/c/f6aa89a0d3ad01c6/EZyYlhpYVHFDtKLI_1P8e5wBSykPsm-jVLGSXQKrCCJ_xw")
+        else:
+            return render_template('e.html',form=form)
+ 
         if (str(form.passw.data)=="449"):
             print("Password Matched")
             #return_template('certificates.html',form=hehe)
             return redirect("https://1drv.ms/w/c/f6aa89a0d3ad01c6/EfYEm2dPozBHjpP7jzNf8t8Baqy01G0G2Yt7o1JTNatcwg")
         else:
             return render_template('e.html',form=form)
+
+    
     return render_template('e.html',form=form)
 
 
