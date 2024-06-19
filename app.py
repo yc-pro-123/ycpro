@@ -32,6 +32,12 @@ def certificates():
     return render_template('e.html',form=form)
 
 
+
+
+@app.route('/me', methods=['GET', 'POST'])
+def submit():
+    return redirect("https://github.com/yc-pro-123")
+
 #@app.route('/submit', methods=['GET', 'POST'])
 #def submit():
 #    form = MyForm()
