@@ -33,7 +33,9 @@ def certificates():
 
 
 
-
+@app.route('/certifications',methods=['GET','POST'])
+def certify():
+    return render_template('certifications.html')
 @app.route('/me', methods=['GET', 'POST'])
 def submit():
     return redirect("https://github.com/yc-pro-123")
