@@ -17,7 +17,7 @@ align-items:flex-end;
 }
  .detp{
 color:white;
-font-family:'Noto Sans','Arial','sans-serif';
+font-family:"Noto Sans","Arial","sans-serif";
 margin:0px;
 display:block;
 /*background-color:blue;
@@ -37,7 +37,7 @@ height:120px;
 }
 a{
 -webkit-tap-highlight-color:rgba(0,0,0,0);
- font-family:'Noto Sans','Arial','sans-serif';
+ font-family:"Noto Sans","Arial","sans-serif";
  position: relative;
  display:inline-block;
  font-size:24px;
@@ -179,7 +179,7 @@ position: absolute;
 /*background-color:#fff;*/
 }
 #cer{
-font-family :'Oswald','verdana','sans-serif';
+font-family :"Oswald","verdana","sans-serif";
 font-size:40px;
 color:white;
 letter-spacing:4px;
