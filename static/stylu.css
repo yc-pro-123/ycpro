@@ -1,0 +1,220 @@
+body{
+
+background-image:url('images/Photographer.jpg');}
+
+#cer{
+font-family :Oswald,verdana,sans-serif;
+font-size:40px;
+color:white;
+letter-spacing:4px;
+margin-left:10px;
+font-weight:bold;
+}
+.details{
+overflow:hidden;
+position:absolute;
+bottom:0px;
+right:0px;
+width:50%;
+height:30%;
+//background-color:grey;
+display:flex;
+flex-direction:column;
+align-items:flex-end;
+}
+ .detp{
+color:white;
+font-family:"Noto Sans",Arial,sans-serif;
+margin:0px;
+display:block;
+//background-color:blue;
+//float:right;
+//width:110px; 
+padding-right:10px;
+}
+#year{
+}
+
+.sectionblock{
+/*background-color:#fff;*/
+overflow:hidden;
+height:120px;
+//height:100%;
+}
+a{
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+ font-family:"Noto Sans",Arial,sans-serif;
+ position: relative;
+ display:inline-block;
+ font-size:24px;
+ cursor:pointer;
+ text-decoration:none;
+}
+a:link{
+color:white;
+}
+a:visited{
+color:green;
+}
+a:hover:{
+color:blue;
+text-decoration:underline;
+}
+a:active{
+color:hotpink;
+
+}
+.mask1 {  
+-webkit-mask-image: radial-gradient(black, transparent);
+mask-image: radial-gradient(farthest-side at 0% 100%,black 70%,rgba(255,255,255,0));
+height:90px;
+width:9px;
+position:relative;
+
+top:100%; /*is at bottom*/
+left:0px;
+border-radius:2% 40% 5% 0%;
+transition:height .3s ease-in, width .3s ease-in, top .3s ease-in;}
+img{
+display:inline-block;
+height:120px;	/*Image Default Dimensions*/
+Width:155px;
+position:relative;
+left:-5px;
+top:-120px; /*is related to height of sectionblock*/
+transition:top .3s ease-in, width .3s ease-in;
+
+}
+.container1:hover .sectionblock .mask1{
+height:170px;
+width:174px;
+/*On hover mask goes up till top 0px*/
+top:0px;
+
+
+}
+#psycho1{
+left:-10px;		/*Pyschology Image Custom dimensions*/
+width:165px;
+
+}
+#googleskillgif{
+left:-10px;
+width:160px;
+}
+
+
+.container1:hover .sectionblock .mask1 img{
+/*n hover image comes down ie -100 to 0px */
+top:0%;
+
+}
+
+
+.container1{
+background-color:#fff;
+color:red;
+height:175px;
+border-radius:20px;
+position:relative;
+overflow:hidden;
+margin:auto;
+margin-bottom:13px;
+width:95%;
+height:calc(170px-0.1em);
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.14);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(4.9px);
+-webkit-backdrop-filter: blur(4.9px);
+border: 1px solid rgba(255, 255, 255, 0.22);
+transition:transform .2s ease-in;
+}
+
+.container1:hover{
+transform:scale(1.01);
+}
+/* Related To Providersss */
+.logocan{
+overflow:hidden;
+position:absolute;
+height:110px;
+width:115px;
+top:0px;
+right:0px;
+background-color:#fff;
+border-radius:0 0 0 90%;
+}
+.logo{
+position:relative;
+top:0px;
+}
+#nptel{
+left:0px;
+top:5px;
+float:right;
+width:90px;
+height:80px;
+}
+#yale{
+top:-10px;
+left:20px;
+width:140px;
+height:120px;
+}
+#googleskill{
+top:-55px;
+left:98px;
+width:220px;
+height:160px;
+}
+/* Providers End*/
+/*
+.container2{
+display:block;
+position:relative;
+//transform-origin:100% 100%;
+border-radius: 5px 60px 5px 0px;
+//background-color:#f0f;
+top:40px;
+width:30px;
+height:120px;
+background-image:radial-gradient(farthest-side at 0% 90%, rgba(0,0,0,0.5) 55%,rgba(255,255,255,1));
+transition: width 1s, height 1s;
+
+//overflow:hidden;
+transition: top .5s ease-out, width .5s ease-out;;
+//transition: width .5s;
+//transform: scaleY(0);
+//transition: height 2s;
+}
+
+
+.container1:hover .container2{
+width:180px;
+top:0px;;
+//height:120px;
+//height:120px;
+//transform:scaleY(1);
+}
+.png{
+display:block;
+width:140px; height:120px; 
+//float:right;
+position:relative;
+//bottom:0px;
+top:40px;
+}*/
+
+.logo{
+float:right;
+}
+.hea{
+margin:20px 5px 5px 11px;
+width: 200px; 
+display:inline-block;
+position: absolute;
+//background-color:#fff;
+}
+
