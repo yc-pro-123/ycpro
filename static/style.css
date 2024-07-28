@@ -1,40 +1,5 @@
 body{
-
-background-image:url('images/Photographer.jpg');}
-
-#cer{
-font-family :Oswald,verdana,sans-serif;
-font-size:40px;
-color:white;
-letter-spacing:4px;
-margin-left:10px;
-font-weight:bold;
-}
-.details{
-overflow:hidden;
-position:absolute;
-bottom:0px;
-right:0px;
-width:50%;
-height:30%;
-//background-color:grey;
-display:flex;
-flex-direction:column;
-align-items:flex-end;
-}
- .detp{
-color:white;
-font-family:"Noto Sans",Arial,sans-serif;
-margin:0px;
-display:block;
-//background-color:blue;
-//float:right;
-//width:110px; 
-padding-right:10px;
-}
-#year{
-}
-
+background-color:#008}
 .sectionblock{
 /*background-color:#fff;*/
 overflow:hidden;
@@ -42,8 +7,7 @@ height:120px;
 //height:100%;
 }
 a{
--webkit-tap-highlight-color:rgba(0,0,0,0);
- font-family:"Noto Sans",Arial,sans-serif;
+//-webkit-tap-highlight-color:rgba(0,0,0,0);
  position: relative;
  display:inline-block;
  font-size:24px;
@@ -54,15 +18,13 @@ a:link{
 color:white;
 }
 a:visited{
-color:green;
+colr:white;
 }
 a:hover:{
 color:blue;
-text-decoration:underline;
 }
 a:active{
 color:hotpink;
-
 }
 .mask1 {  
 -webkit-mask-image: radial-gradient(black, transparent);
@@ -95,7 +57,7 @@ top:0px;
 }
 #psycho1{
 left:-10px;		/*Pyschology Image Custom dimensions*/
-width:165px;
+width:190px;
 
 }
 #googleskillgif{
@@ -114,12 +76,11 @@ top:0%;
 .container1{
 background-color:#fff;
 color:red;
-height:175px;
 border-radius:20px;
 position:relative;
 overflow:hidden;
 margin:auto;
-margin-bottom:13px;
+margin-bottom:10px;
 width:95%;
 height:calc(170px-0.1em);
 /* From https://css.glass */
@@ -211,10 +172,5 @@ top:40px;
 float:right;
 }
 .hea{
-margin:20px 5px 5px 11px;
-width: 200px; 
-display:inline-block;
-position: absolute;
-//background-color:#fff;
-}
+margin:20px 20px 5px 16px;}
 
