@@ -17,7 +17,7 @@ bottom:0px;
 right:0px;
 width:50%;
 height:30%;
-//background-color:grey;
+/*background-color:grey;*/
 display:flex;
 flex-direction:column;
 align-items:flex-end;
@@ -27,9 +27,9 @@ color:white;
 font-family:"Noto Sans",Arial,sans-serif;
 margin:0px;
 display:block;
-//background-color:blue;
-//float:right;
-//width:110px; 
+/*background-color:blue;
+float:right;
+width:110px; */
 padding-right:10px;
 }
 #year{
@@ -39,7 +39,7 @@ padding-right:10px;
 /*background-color:#fff;*/
 overflow:hidden;
 height:120px;
-//height:100%;
+/*height:100%;*/
 }
 a{
 -webkit-tap-highlight-color:rgba(0,0,0,0);
@@ -78,7 +78,7 @@ transition:height .3s ease-in, width .3s ease-in, top .3s ease-in;}
 img{
 display:inline-block;
 height:120px;	/*Image Default Dimensions*/
-Width:155px;
+width:155px;
 position:relative;
 left:-5px;
 top:-120px; /*is related to height of sectionblock*/
@@ -170,42 +170,9 @@ width:220px;
 height:160px;
 }
 /* Providers End*/
-/*
-.container2{
-display:block;
-position:relative;
-//transform-origin:100% 100%;
-border-radius: 5px 60px 5px 0px;
-//background-color:#f0f;
-top:40px;
-width:30px;
-height:120px;
-background-image:radial-gradient(farthest-side at 0% 90%, rgba(0,0,0,0.5) 55%,rgba(255,255,255,1));
-transition: width 1s, height 1s;
-
-//overflow:hidden;
-transition: top .5s ease-out, width .5s ease-out;;
-//transition: width .5s;
-//transform: scaleY(0);
-//transition: height 2s;
-}
 
 
-.container1:hover .container2{
-width:180px;
-top:0px;;
-//height:120px;
-//height:120px;
-//transform:scaleY(1);
-}
-.png{
-display:block;
-width:140px; height:120px; 
-//float:right;
-position:relative;
-//bottom:0px;
-top:40px;
-}*/
+ 
 
 .logo{
 float:right;
@@ -215,6 +182,6 @@ margin:20px 5px 5px 11px;
 width: 200px; 
 display:inline-block;
 position: absolute;
-//background-color:#fff;
+/*background-color:#fff;*/
 }
 
