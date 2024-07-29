@@ -2,7 +2,14 @@
 
 background-image:url('images/Photographer.jpg');}
 */
-
+#cer{
+font-family :"Oswald","verdana",sans-serif;
+font-size:40px;
+color:white;
+letter-spacing:4px;
+margin-left:10px;
+font-weight:bold;
+}
 .details{
 overflow:hidden;
 position:absolute;
@@ -178,11 +185,4 @@ display:inline-block;
 position: absolute;
 /*background-color:#fff;*/
 }
-#cer{
-font-family :"Oswald","verdana","sans-serif";
-font-size:40px;
-color:white;
-letter-spacing:4px;
-margin-left:10px;
-font-weight:bold;
-}
+
