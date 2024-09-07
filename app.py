@@ -56,7 +56,7 @@ def twitsave(ab):
         r=s.get(url1,params=params)
         soup =BeautifulSoup(r.content,'html.parser')
         e=soup.prettify()
-        #print(r.text,"\n\n\n")
+        print(r.text,"\n\n\n")
         w=soup.find_all("ul")
         return redirect((w[2].find(("li")).a["href"]))
 #@app.route('/submit', methods=['GET', 'POST'])
