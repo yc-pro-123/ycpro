@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect 
+from flask import Flask, render_template, redirect, request
 from flask_wtf import *
 from wtforms import *
 from bs4 import BeautifulSoup
@@ -41,8 +41,9 @@ def certify():
 @app.route('/me', methods=['GET', 'POST'])
 def submit():
     return redirect("https://github.com/yc-pro-123")
-@app.route('/t/<ab>',methods=['GET'])
-def twitsave(ab):
+@app.route('/t',methods=['GET'])
+def twitsave():
+    ab=request.args.get("a")
     print("Hey",ab)
     #url ="https://twitter.com/TweetTemplates1/status/1809197143099670530"
     params={"url":"https://x.com/"+ab
