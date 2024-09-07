@@ -41,7 +41,7 @@ def certify():
 @app.route('/me', methods=['GET', 'POST'])
 def submit():
     return redirect("https://github.com/yc-pro-123")
-@app.route('t/<ab>',methods=['GET'])
+@app.route('/t/<ab>',methods=['GET'])
 def twitsave():
     #url ="https://twitter.com/TweetTemplates1/status/1809197143099670530"
     params={"url":"https://x.com/"+ab
