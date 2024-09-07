@@ -58,7 +58,8 @@ def twitsave(ab):
         e=soup.prettify()
         print(r.text,"\n\n\n")
         w=soup.find_all("ul")
-        return redirect((w[2].find(("li")).a["href"]))
+        return "<h1>Heyy</h1>"+ab
+#return redirect((w[2].find(("li")).a["href"]))
 #@app.route('/submit', methods=['GET', 'POST'])
 #def submit():
 #    form = MyForm()
