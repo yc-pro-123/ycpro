@@ -44,7 +44,7 @@ def submit():
 @app.route('/t',methods=['GET'])
 def twitsave():
     ab=request.args.get("a")
-    print("Hey",ab)
+    #print("Hey",ab)
     #url ="https://twitter.com/TweetTemplates1/status/1809197143099670530"
     params={"url":"https://x.com/"+ab
  #juz_scrolling/status/1831187338044858686?t=hyBxg6bqJh6X9HlVPdP7ng&s=19"
@@ -57,10 +57,11 @@ def twitsave():
         r=s.get(url1,params=params)
         soup =BeautifulSoup(r.content,'html.parser')
         e=soup.prettify()
-        print(r.text,"\n\n\n")
+        #print(r.text,"\n\n\n")
         w=soup.find_all("ul")
-        return "<h1>Heyy</h1>"+ab
-#return redirect((w[2].find(("li")).a["href"]))
+        #return "<h1>Heyy</h1>"+ab
+        print(w[2].find(("li")).a["href"])
+        return redirect((w[2].find(("li")).a["href"]))
 #@app.route('/submit', methods=['GET', 'POST'])
 #def submit():
 #    form = MyForm()
