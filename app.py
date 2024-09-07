@@ -1,6 +1,8 @@
 from flask import Flask, render_template, redirect 
 from flask_wtf import *
 from wtforms import *
+from bs4 import BeautifulSoup
+import requests
 from wtforms.validators import DataRequired
 app = Flask(__name__)
 app.secret_key = 'development key'
@@ -39,7 +41,23 @@ def certify():
 @app.route('/me', methods=['GET', 'POST'])
 def submit():
     return redirect("https://github.com/yc-pro-123")
-
+@app.route('t/<ab>',methods=['GET'])
+def twitsave():
+    #url ="https://twitter.com/TweetTemplates1/status/1809197143099670530"
+    params={"url":"https://x.com/"+ab
+ #juz_scrolling/status/1831187338044858686?t=hyBxg6bqJh6X9HlVPdP7ng&s=19"
+}
+    url1="https://twitsave.com/info" 
+    with requests.Session() as s:
+        s.headers.update({
+        'User-Agent': "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36"
+    })
+        r=s.get(url1,params=params)
+        soup =BeautifulSoup(r.content,'html.parser')
+        e=soup.prettify()
+        #print(r.text,"\n\n\n")
+        w=soup.find_all("ul")
+        return redirect((w[2].find(("li")).a["href"]))
 #@app.route('/submit', methods=['GET', 'POST'])
 #def submit():
 #    form = MyForm()
