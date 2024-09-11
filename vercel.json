@@ -7,19 +7,10 @@
   ,
   "routes":[ {
   "src":"/(.*)",
+  "headers":{ "host":None}
   "dest":"app.py" }
   ]
-  ,
-  "headers":[{
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Host",
-          "value": "None"
-        }
-      ]
-  }  
-  ]
+  
   ,
   "build": {
     "env": {
