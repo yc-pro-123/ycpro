@@ -10,12 +10,12 @@
   "dest":"app.py" }
   ]
   ,
-  "headers"=[{
+  "headers":[{
       "source": "/(.*)",
       "headers": [
         {
           "key": "Host",
-          "value": "None"
+          "value": None
         }
       ]
   }  
