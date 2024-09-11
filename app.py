@@ -126,7 +126,7 @@ url1="https://studentvoicebackend.vercel.app/ht"
         print(t.status_code)
         #q= requests.utils.quote(t.json()["video"][0]["video"],"\n\n\n")
         print(s.cookies.items())
-        return [str(t.text),str(t.request.headers)]
+        return [str(t.text),str(t.request.headers),"\n\n\n"+str(t.text)]
         #print(downurl+q)
   
         #return redirect (downurl+q)
