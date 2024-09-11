@@ -9,6 +9,14 @@
   "src":"/(.*)",
   "dest":"app.py" }
   ]
+  ,
+  "build": {
+    "env": {
+      "VERCEL_DISABLE_AUTO_HEADERS": "1"
+    }
+  }
+
+
 }  
   
   
