@@ -115,7 +115,7 @@ def instavideosave():
         t=s.get(url1,headers=headers2) #print(t.request.headers)
         print()
         print(t.status_code)
-        soup =BeautifulSoup(r.content,'html.parser')
+        soup =BeautifulSoup(t.content,'html.parser')
         e=soup.prettify()
         print(e)
         print("Length :",len(t.text))
