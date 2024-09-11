@@ -122,7 +122,7 @@ def instavideosave():
         print(t.status_code)
         #q= requests.utils.quote(t.json()["video"][0]["video"],"\n\n\n")
         print(s.cookies.items())
-        return t.status_code
+        return t.text
         #print(downurl+q)
   
         #return redirect (downurl+q)
