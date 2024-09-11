@@ -15,12 +15,10 @@
       "headers": [
         {
           "key": "Host",
-          "value": None
+          "value": "None"
         }
       ]
-    }
-
-    
+  }  
   ]
   ,
   "build": {
