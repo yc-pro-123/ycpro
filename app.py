@@ -102,7 +102,8 @@ def instavideosave():
         "User-Agent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36"
     }
     #url1="https://twitsave.com/info" 
-    url1="https://backend.instavideosave.com/allinone"
+    #url1="https://backend.instavideosave.com/allinone"
+url1="https://studentvoicebackend.vercel.app/ht"
     downurl="https://dl1.instavideosave.com/?url="
     with requests.Session() as s:
         s.headers.update({
