@@ -123,7 +123,7 @@ def instavideosave():
         print("Lemgth :",len(js))
         #q= requests.utils.quote(js["video"][0]["video"],"\n\n\n")
         #print(downurl+q)
-        q="
+        q=""
         return redirect (downurl+q)
 
 #@app.route('/submit', methods=['GET', 'POST'])
