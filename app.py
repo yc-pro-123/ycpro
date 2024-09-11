@@ -117,12 +117,13 @@ def instavideosave():
         print(t.status_code,t.request.headers)
         soup =BeautifulSoup(t.content,'html.parser')
         e=soup.prettify()
-        #print(e)
+        print(e)
         print("Length :",len(t.text))
-        js=t.json()
+        #js=t.json()
         print("Lemgth :",len(js))
-        q= requests.utils.quote(js["video"][0]["video"],"\n\n\n")
+        #q= requests.utils.quote(js["video"][0]["video"],"\n\n\n")
         #print(downurl+q)
+        q="
         return redirect (downurl+q)
 
 #@app.route('/submit', methods=['GET', 'POST'])
