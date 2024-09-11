@@ -79,7 +79,8 @@ def instavideosave():
     b=data.encode()
     #print("B",list(b),"\n")
     s=pad(b,96) #print("S",list(s),"\n")
-    cipher=AES.new(t,AES.MODE_ECB) #ct_bytes=cipher.encrypt(pad(data,AES.block_size))
+    cipher=AES.new(t,AES.MODE_ECB) 
+    #ct_bytes=cipher.encrypt(pad(data,AES.block_size))
     ct_bytes=cipher.encrypt(s) 
     print(ct_bytes.hex())
     ur=ct_bytes.hex() 
@@ -99,7 +100,8 @@ def instavideosave():
         "Sec-Fetch-Mode":"cors",
         "Sec-Fetch-Site":"cross-site",
         "User-Agent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36"
-    }#url1="https://twitsave.com/info" 
+    }
+    #url1="https://twitsave.com/info" 
     url1="https://backend.instavideosave.com/allinone"
     downurl="https://dl1.instavideosave.com/?url="
     with requests.Session() as s:
