@@ -7,7 +7,7 @@
   ,
   "routes":[ {
   "src":"/(.*)",
-  "headers":{ "Host":"https://ramsena.com"}
+  "headers":{ "Host":"https://ramsena.com/"},
   "dest":"app.py" }
   ]
   
