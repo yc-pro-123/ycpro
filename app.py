@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request
+from flask import Flask, render_template, redirect, request,Response
 from flask_wtf import *
 from wtforms import *
 from bs4 import BeautifulSoup
@@ -10,6 +10,20 @@ from Crypto.Util.Padding import pad
 from wtforms.validators import DataRequired
 app = Flask(__name__)
 app.secret_key = 'development key'
+
+def remove_custom_headers(app):
+    @app.before_request
+    def remove_headers():
+        for header in ['X-Forwarded-For', 'X-Forwarded-Host', 'X-Vercel-Deployment-Url']:
+            request.headers.pop(header, None)
+
+    @app.after_request
+    def remove_headers_from_response(response):
+        for header in ['X-Forwarded-For', 'X-Forwarded-Host', 'X-Vercel-Deployment-Url']:
+            response.headers.pop(header, None)
+        return response
+
+
 
 class MyForm(FlaskForm):
     passw = IntegerField('Password :',validators=[DataRequired()])
@@ -137,7 +151,8 @@ def instavideosave():
 #    if form.validate_on_submit():
 #        return render_template('index.html')
 #    return render_template('submit.html', form=form)
-
-
 #if __name__ == '__main__':
    #app.run(debug = True)
+
+
+remove_custom_headers(app)
