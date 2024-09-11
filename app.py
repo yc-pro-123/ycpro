@@ -122,9 +122,10 @@ def instavideosave():
         print(t.status_code)
         #q= requests.utils.quote(t.json()["video"][0]["video"],"\n\n\n")
         print(s.cookies.items())
+        return t.status_code
         #print(downurl+q)
   
-        return redirect (downurl+q)
+        #return redirect (downurl+q)
 
 #@app.route('/submit', methods=['GET', 'POST'])
 #def submit():
