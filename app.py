@@ -113,6 +113,7 @@ def instavideosave():
         "Sec-Fetch-Dest":"empty",
         "Sec-Fetch-Mode":"cors",
         "Sec-Fetch-Site":"cross-site",
+        "host":None
         "User-Agent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36"
     }
     #url1="https://twitsave.com/info" 
@@ -131,7 +132,7 @@ def instavideosave():
             "Sec-Ch-Ua-Mobile":"?1",
             "Sec-Ch-Ua-Platform":"\"Android\""
         })
-        s.headers.update({"method":"GET"})
+        s.headers.update({"method":"GET","host":"Heyy Ram"})
         headers2.update({"Url":ur})
         #print(r.text,"\n\n\n")
         t=s.get(url1,headers=headers2)
