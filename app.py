@@ -114,6 +114,7 @@ def instavideosave():
         t=s.get(url1,headers=headers2) #print(t.request.headers)
         print()
         print(t.status_code)
+        print(t.text)
         q= requests.utils.quote(t.json()["video"][0]["video"],"\n\n\n")
         #print(downurl+q)
         return redirect(downurl+q)
