@@ -107,6 +107,7 @@ def instavideosave():
             'User-Agent': "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",
         #"Content-Type":"application/json"
         })
+        print(s.get("https://instavideosave.net").status_code)
         headers2=headers
         headers2.update({
             "Sec-Ch-Ua":"\"Not-A.Brand\";v=\"99\", \"Chromium\";v=\"124\"",
