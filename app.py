@@ -82,7 +82,8 @@ def instavideosave():
     cipher=AES.new(t,AES.MODE_ECB) #ct_bytes=cipher.encrypt(pad(data,AES.block_size))
     ct_bytes=cipher.encrypt(s) 
     print(ct_bytes.hex())
-    ur=ct_bytes.hex() #url ="https://twitter.com/TweetTemplates1/status/1809197143099670530" #params={"url":"https://www.instagram.com/reel/C_ktpDXSW9l/?utm_source=ig_web_button_share_sheet"}
+    ur=ct_bytes.hex() 
+    #url ="https://twitter.com/TweetTemplates1/status/1809197143099670530" #params={"url":"https://www.instagram.com/reel/C_ktpDXSW9l/?utm_source=ig_web_button_share_sheet"}
     headers={
         "authority":"backend.instavideosave.com",
         "path":"/allinone",
@@ -99,32 +100,30 @@ def instavideosave():
         "Sec-Fetch-Site":"cross-site",
         "User-Agent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36"
     }#url1="https://twitsave.com/info" 
-    url1="https://backend.instavideosave.com/allinone/"
+    url1="https://backend.instavideosave.com/allinone"
     downurl="https://dl1.instavideosave.com/?url="
     with requests.Session() as s:
-        s.headers.update({'User-Agent': "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",#"Content-Type":"application/json"
-                         })
+        s.headers.update({
+            'User-Agent': "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",
+        #"Content-Type":"application/json"
+        })
         headers2=headers
         headers2.update({
-    "Sec-Ch-Ua":"\"Not-A.Brand\";v=\"99\", \"Chromium\";v=\"124\"",
-    "Sec-Ch-Ua-Mobile":"?1",
-    "Sec-Ch-Ua-Platform":"\"Android\""
-    })
+            "Sec-Ch-Ua":"\"Not-A.Brand\";v=\"99\", \"Chromium\";v=\"124\"",
+            "Sec-Ch-Ua-Mobile":"?1",
+            "Sec-Ch-Ua-Platform":"\"Android\""
+        })
         s.headers.update({"method":"GET"})
-        headers2.update({"Url":ur}) #print(r.text,"\n\n\n")
-        t=s.get(url1,headers=headers2) #print(t.request.headers)
+        headers2.update({"Url":ur})
+        #print(r.text,"\n\n\n")
+        t=s.get(url1,headers=headers2)
+        print(t.request.headers)
         print()
-        print(t.status_code,t.request.headers)
-        soup =BeautifulSoup(t.content,'html.parser')
-        e=soup.prettify()
-        print(e)
-        print("Length :",len(t.text))
-        return e
-        #js=t.json()
-        print("Lemgth :",len(js))
-        #q= requests.utils.quote(js["video"][0]["video"],"\n\n\n")
+        print(t.status_code)
+        #q= requests.utils.quote(t.json()["video"][0]["video"],"\n\n\n")
+        print(s.cookies.items())
         #print(downurl+q)
-        q=""
+  
         return redirect (downurl+q)
 
 #@app.route('/submit', methods=['GET', 'POST'])
