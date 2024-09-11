@@ -113,7 +113,7 @@ def instavideosave():
         "Sec-Fetch-Dest":"empty",
         "Sec-Fetch-Mode":"cors",
         "Sec-Fetch-Site":"cross-site",
-        "host":"None"
+        "host":None,
         "User-Agent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36"
     }
     #url1="https://twitsave.com/info" 
