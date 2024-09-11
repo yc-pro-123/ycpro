@@ -3,6 +3,10 @@ from flask_wtf import *
 from wtforms import *
 from bs4 import BeautifulSoup
 import requests
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad
+
+
 from wtforms.validators import DataRequired
 app = Flask(__name__)
 app.secret_key = 'development key'
@@ -41,9 +45,10 @@ def certify():
 @app.route('/me', methods=['GET', 'POST'])
 def submit():
     return redirect("https://github.com/yc-pro-123")
+
 @app.route('/t',methods=['GET'])
 def twitsave():
-    ab=request.args.get("a")
+    ab=request.args.get("t")
     #print("Hey",ab)
     #url ="https://twitter.com/TweetTemplates1/status/1809197143099670530"
     params={"url":"https://x.com/"+ab
@@ -62,6 +67,57 @@ def twitsave():
         #return "<h1>Heyy</h1>"+ab
         print(w[2].find(("li")).a["href"])
         return redirect((w[2].find(("li")).a["href"]))
+
+
+@app.route("/i",methods=["GET"])
+def instavideosave():
+    data=request.args.get("i")
+    #data="https://www.instagram.com/reel/C_ktpDXSW9l/?utm_source=ig_web_button_share_sheet"
+    key ="qwertyuioplkjhgf"
+    t=key.encode(encoding="utf-8")
+    #print("T",list(t),"\n")
+    b=data.encode()
+    #print("B",list(b),"\n")
+    s=pad(b,96) #print("S",list(s),"\n")
+    cipher=AES.new(t,AES.MODE_ECB) #ct_bytes=cipher.encrypt(pad(data,AES.block_size))
+    ct_bytes=cipher.encrypt(s) #print(ct_bytes.hex())
+    ur=ct_bytes.hex() #url ="https://twitter.com/TweetTemplates1/status/1809197143099670530" #params={"url":"https://www.instagram.com/reel/C_ktpDXSW9l/?utm_source=ig_web_button_share_sheet"}
+    headers={
+        "authority":"backend.instavideosave.com",
+        "path":"/allinone",
+        "scheme":"https",
+        "Accept":"*/*",
+        "Accept-Encoding":"gzip, deflate, br",
+        "Accept-Language":"en-US,en;q=0.9",
+        "Cache-Control":"no-cache",
+        "Origin":"https://www.instavideosave.net",
+        "Pragma":"no-cache",
+        "Referer":"https://www.instavideosave.net/",
+        "Sec-Fetch-Dest":"empty",
+        "Sec-Fetch-Mode":"cors",
+        "Sec-Fetch-Site":"cross-site",
+        "User-Agent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36"
+    }#url1="https://twitsave.com/info" 
+    url1="https://backend.instavideosave.com/allinone"
+    downurl="https://dl1.instavideosave.com/?url="
+    with requests.Session() as s:
+        s.headers.update({'User-Agent': "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",#"Content-Type":"application/json"
+                         })
+        headers2=headers
+        headers2.update({
+    "Sec-Ch-Ua":"\"Not-A.Brand\";v=\"99\", \"Chromium\";v=\"124\"",
+    "Sec-Ch-Ua-Mobile":"?1",
+    "Sec-Ch-Ua-Platform":"\"Android\""
+    })
+        s.headers.update({"method":"GET"})
+        headers2.update({"Url":ur}) #print(r.text,"\n\n\n")
+        t=s.get(url1,headers=headers2) #print(t.request.headers)
+        print()
+        print(t.status_code)
+        q= requests.utils.quote(t.json()["video"][0]["video"],"\n\n\n")
+        #print(downurl+q)
+        return redirect(downurl+q)
+
 #@app.route('/submit', methods=['GET', 'POST'])
 #def submit():
 #    form = MyForm()
