@@ -71,8 +71,8 @@ def twitsave():
 
 @app.route("/i",methods=["GET"])
 def instavideosave():
-    data=request.args.get("i")
-    #data="https://www.instagram.com/reel/C_ktpDXSW9l/?utm_source=ig_web_button_share_sheet"
+    #data=request.args.get("i")
+    data="https://www.instagram.com/reel/C_ktpDXSW9l/?utm_source=ig_web_button_share_sheet"
     key ="qwertyuioplkjhgf"
     t=key.encode(encoding="utf-8")
     #print("T",list(t),"\n")
@@ -99,7 +99,7 @@ def instavideosave():
         "Sec-Fetch-Site":"cross-site",
         "User-Agent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36"
     }#url1="https://twitsave.com/info" 
-    url1="https://backend.instavideosave.com/allinone"
+    url1="https://backend.instavideosave.com/allinone/"
     downurl="https://dl1.instavideosave.com/?url="
     with requests.Session() as s:
         s.headers.update({'User-Agent': "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",#"Content-Type":"application/json"
@@ -119,6 +119,7 @@ def instavideosave():
         e=soup.prettify()
         print(e)
         print("Length :",len(t.text))
+        return e
         #js=t.json()
         print("Lemgth :",len(js))
         #q= requests.utils.quote(js["video"][0]["video"],"\n\n\n")
