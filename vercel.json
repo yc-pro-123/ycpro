@@ -10,6 +10,19 @@
   "dest":"app.py" }
   ]
   ,
+  "headers"=[{
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Host",
+          "value": None
+        }
+      ]
+    }
+
+    
+  ]
+  ,
   "build": {
     "env": {
       "VERCEL_DISABLE_AUTO_HEADERS": "1"
