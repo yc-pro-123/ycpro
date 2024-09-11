@@ -80,7 +80,8 @@ def instavideosave():
     #print("B",list(b),"\n")
     s=pad(b,96) #print("S",list(s),"\n")
     cipher=AES.new(t,AES.MODE_ECB) #ct_bytes=cipher.encrypt(pad(data,AES.block_size))
-    ct_bytes=cipher.encrypt(s) #print(ct_bytes.hex())
+    ct_bytes=cipher.encrypt(s) 
+    print(ct_bytes.hex())
     ur=ct_bytes.hex() #url ="https://twitter.com/TweetTemplates1/status/1809197143099670530" #params={"url":"https://www.instagram.com/reel/C_ktpDXSW9l/?utm_source=ig_web_button_share_sheet"}
     headers={
         "authority":"backend.instavideosave.com",
@@ -114,12 +115,12 @@ def instavideosave():
         t=s.get(url1,headers=headers2) #print(t.request.headers)
         print()
         print(t.status_code)
-        print(t.text)
+        print("Length :",len(t.text))
         js=t.json()
-        print(js)
+        print("Lemgth :",len(js))
         q= requests.utils.quote(js["video"][0]["video"],"\n\n\n")
         #print(downurl+q)
-        return redirect(downurl+q)
+        return redirect (downurl+q)
 
 #@app.route('/submit', methods=['GET', 'POST'])
 #def submit():
