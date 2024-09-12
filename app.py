@@ -101,12 +101,11 @@ def instavideosave():
     ur=ct_bytes.hex() 
     #url ="https://twitter.com/TweetTemplates1/status/1809197143099670530" #params={"url":"https://www.instagram.com/reel/C_ktpDXSW9l/?utm_source=ig_web_button_share_sheet"}
     downurl="https://dl1.instavideosave.com/?url="
-    scr=f"<html lang='en-US'><head>
-<title>Hellll/title>
+    scr="""<html lang='en-US'><head><title>Hellll/title>
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'></head>
 
-<h1>Yours Url:{data}\nHash :{ur}"+"""</h1><h2 id='hu'></h2><script>var downurl='https://dl1.instavideosave.com/?url='; 
+<h1>Yours Url:"""+f"{data}\nHash :{ur}"+"""</h1><h2 id='hu'></h2><script>var downurl='https://dl1.instavideosave.com/?url='; 
     var ur = """+str(ur)+""";
     var e={
     'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 
