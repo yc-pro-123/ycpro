@@ -129,7 +129,7 @@ def instavideosave():
     .then(data => {
     // do whatever you want with data
     var link=data["video"][0]["video"];
-    document.getElementById("hu").innerHTML=link;
+    document.getElementById("hu").innerHTML=data;
     window.location.assign(downurl+encodeURIComponent(link)); });
     //window.fetch(downurl+encodeURIComponent(link));</script>"""
     return scr
