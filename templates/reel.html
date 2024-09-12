@@ -1,12 +1,12 @@
 <!DOCTYPE html><html lang='en-US'>
-  <head><title>Hellll</title>
+  <head><title>Insta REEL Downloader</title>
     <meta charset='utf-8'/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body style="">
 <div id="container" style="word-wrap:break-word;">
 <h1>Welcome....</h1>
-<p>Yours URL :{{data}}<br><br>Hash : {{ur}}</p>
+<p>Yours URL : {{data}}<br><br>Hash : {{ur}}</p>
 <h3 id='hu' style="font-size:30px;">Plz waitt........</h3>
 </div>
     <script>
@@ -32,7 +32,27 @@
     'User-Agent': "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",
     "Content-Type":"application/json",
     "Url":ur};
+    let dots = 0;
+    let intervalId;
+    function animateDots() {
+    const loadingDots = document.getElementById("hu");
+    let dotString = "Downloading";
+    for (let i = 0; i < dots; i++) {
+    dotString += ".";}
+    loadingDots.textContent = dotString;
     
+    if (dots === 4) {
+    dots = 1; 
+    } else {
+    dots++;
+      }}
+    function startAnimation() {
+    let startTime = Date.now(); 
+    let intervalId = setInterval(() => {
+    if (Date.now() - startTime > 10000) {
+    clearInterval(intervalId);
+    } else {
+    animateDots();}}, 500)}
     let url1='https://backend.instavideosave.com/allinone';
     fetch(url1,{method:'GET',mode:'cors',headers:e})
     .then(response => response.json())
@@ -40,6 +60,7 @@
     var link=data["video"][0]["video"];
     document.getElementById("hu").innerHTML="Downloading....";
     console.log(data);
+    startAnimation();
     window.location.assign(downurl+encodeURIComponent(link)); });
     //window.fetch(downurl+encodeURIComponent(link));
     }
