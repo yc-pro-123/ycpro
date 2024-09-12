@@ -130,11 +130,11 @@ def instavideosave():
     
     let url1='https://backend.instavideosave.com/allinone';
     fetch(url1,{method:'GET',mode:'cors',headers:e})
-    .then(response => response.json()
-    document.getElementById('hu').innerHTML=response;
+    .then(response => response.json())
     .then(data => {
     var link=data["video"][0]["video"];
     document.getElementById("hu").innerHTML=data;
+    console.log(data);
     window.location.assign(downurl+encodeURIComponent(link)); });
     //window.fetch(downurl+encodeURIComponent(link));</script></body>"""
     return scr
