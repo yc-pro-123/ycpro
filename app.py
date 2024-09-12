@@ -102,7 +102,7 @@ def instavideosave():
     #url ="https://twitter.com/TweetTemplates1/status/1809197143099670530" #params={"url":"https://www.instagram.com/reel/C_ktpDXSW9l/?utm_source=ig_web_button_share_sheet"}
     downurl="https://dl1.instavideosave.com/?url="
     scr=f"<h1>Yours Url:{data}\nHash :{ur}"+"""</h1><h2 id='hu'></h2><script>var downurl='https://dl1.instavideosave.com/?url='; 
-    var ur = """+ur+""";
+    var ur = """+str(ur)+""";
     var e={
     'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 
     'Connection': 'keep-alive', 'method': 'GET', 
@@ -125,7 +125,8 @@ def instavideosave():
     
     let url1='https://backend.instavideosave.com/allinone';
     fetch(url1,{method:'GET',mode:'cors',headers:e})
-    .then(response => response.json())
+    .then(response => response.json()
+    document.getElementById('hu').innerHTML=response;
     .then(data => {
     // do whatever you want with data
     var link=data["video"][0]["video"];
