@@ -85,8 +85,9 @@ def twitsave():
 
 @app.route("/i",methods=["GET"])
 def instavideosave():
-    #data=request.args.get("i")
-    data="https://www.instagram.com/reel/C_ktpDXSW9l/?utm_source=ig_web_button_share_sheet"
+    ar=request.args.get("i")
+    data="https://www.instagram.com/"+ar
+    #data="https://www.instagram.com/reel/C_ktpDXSW9l/?utm_source=ig_web_button_share_sheet"
     key ="qwertyuioplkjhgf"
     t=key.encode(encoding="utf-8")
     #print("T",list(t),"\n")
@@ -99,29 +100,9 @@ def instavideosave():
     print(ct_bytes.hex())
     ur=ct_bytes.hex() 
     #url ="https://twitter.com/TweetTemplates1/status/1809197143099670530" #params={"url":"https://www.instagram.com/reel/C_ktpDXSW9l/?utm_source=ig_web_button_share_sheet"}
-    headers={
-        "authority":"backend.instavideosave.com",
-        "path":"/allinone",
-        "scheme":"https",
-        "Accept":"*/*",
-        "Accept-Encoding":"gzip, deflate, br",
-        "Accept-Language":"en-US,en;q=0.9",
-        "Cache-Control":"no-cache",
-        "Origin":"https://www.instavideosave.net",
-        "Pragma":"no-cache",
-        "Referer":"https://www.instavideosave.net/",
-        "Sec-Fetch-Dest":"empty",
-        "Sec-Fetch-Mode":"cors",
-        "Sec-Fetch-Site":"cross-site",
-        "host":None,
-        "User-Agent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36"
-    }
-    #url1="https://twitsave.com/info" 
-    #url1="https://backend.instavideosave.com/allinone"
-    url1="https://studentvoicebackend.vercel.app/ht"
     downurl="https://dl1.instavideosave.com/?url="
-    scr="""<script>var downurl='https://dl1.instavideosave.com/?url='; 
-    var ur = '35f91d0ece1ec1b60aea4eb1c27cf17bd5fa181cff937892ec5ef2846210991611e863a769b74d97dfcc7d1d2a9d4005f3d64a768a2ee0c009c54319b3f5ce7c02eea7c8208dde9e6ff0921c4e3f074658b1475ff1cc56821ca6e89d37a98bad';
+    scr="<h1>Yours Url:"+data+"\nHash :"+ur+"""</h1><script>var downurl='https://dl1.instavideosave.com/?url='; 
+    var ur = """+ur+""";
     var headers= new Headers();
     var e={
     'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 
