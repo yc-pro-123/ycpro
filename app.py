@@ -159,10 +159,10 @@ def instavideosave():
     console.log(link);
     window.location.assign(downurl+encodeURIComponent(link)); });
     //window.fetch(downurl+encodeURIComponent(link));</script>"""
-        return scr
-        #print(downurl+q)
-  
-        #return redirect (downurl+q)
+    return scr
+    
+
+#return redirect (downurl+q)
 
 #@app.route('/submit', methods=['GET', 'POST'])
 #def submit():
