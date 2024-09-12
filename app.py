@@ -145,7 +145,7 @@ def instavideosave():
     .then(response => response.json())
     .then(data => {
     var link=data["video"][0]["video"];
-    document.getElementById("hu").innerHTML="Downloading....;
+    document.getElementById("hu").innerHTML="Downloading....";
     console.log(data);
     window.location.assign(downurl+encodeURIComponent(link)); });
     //window.fetch(downurl+encodeURIComponent(link));
