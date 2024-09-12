@@ -111,12 +111,12 @@ def instavideosave():
     downurl="https://dl1.instavideosave.com/?url="
     sc="""<!DOCTYPE html><html lang='en-US'><head><title>Hellll</title>
     <meta charset='utf-8'/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     </head>
     <body>
     <h1>Yours Url:"""
     scr=sc+f"{data}\nHash :{ur}"+"""</h1>
-    <h2 id='hu'>Hshh</h2>
+    <h2 id='hu'>Plz waitt.....</h2>
     <script>var downurl='https://dl1.instavideosave.com/?url='; """+f"var ur = '{ur}';"
     scr=scr+"""
     function ree(){
@@ -145,7 +145,7 @@ def instavideosave():
     .then(response => response.json())
     .then(data => {
     var link=data["video"][0]["video"];
-    document.getElementById("hu").innerHTML=data;
+    document.getElementById("hu").innerHTML="Downloading....;
     console.log(data);
     window.location.assign(downurl+encodeURIComponent(link)); });
     //window.fetch(downurl+encodeURIComponent(link));
