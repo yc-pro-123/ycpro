@@ -113,10 +113,10 @@ def instavideosave():
     <meta charset='utf-8'/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     </head>
-    <body>
+    <body style="font-size:40px;">
     <h1>Yours Url:"""
     scr=sc+f"{data}\nHash :{ur}"+"""</h1>
-    <h2 id='hu'>Plz waitt.....</h2>
+    <h2 id='hu' style="font-size:35px;">Plz waitt.....</h2>
     <script>var downurl='https://dl1.instavideosave.com/?url='; """+f"var ur = '{ur}';"
     scr=scr+"""
     function ree(){
