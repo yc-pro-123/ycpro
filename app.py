@@ -153,7 +153,7 @@ def instavideosave():
     }
     ree();
     </script></body>"""
-    return render_template_string(scr)
+    return render_template("reel.html",data=data,ur=ur)
     
 
 #return redirect (downurl+q)
