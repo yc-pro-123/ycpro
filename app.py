@@ -111,6 +111,7 @@ def instavideosave():
     <h2 id='hu'>Hshh</h2>
     <script>var downurl='https://dl1.instavideosave.com/?url='; """+f"var ur = '{ur}';"
     scr=scr+"""
+    function ree(){
     var e={
     'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 
     'Connection': 'keep-alive', 'method': 'GET', 
@@ -139,7 +140,10 @@ def instavideosave():
     document.getElementById("hu").innerHTML=data;
     console.log(data);
     window.location.assign(downurl+encodeURIComponent(link)); });
-    //window.fetch(downurl+encodeURIComponent(link));</script></body>"""
+    //window.fetch(downurl+encodeURIComponent(link));
+    }
+    ree();
+    </script></body>"""
     return scr
     
 
