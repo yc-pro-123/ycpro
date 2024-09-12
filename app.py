@@ -120,28 +120,46 @@ def instavideosave():
     #url1="https://backend.instavideosave.com/allinone"
     url1="https://studentvoicebackend.vercel.app/ht"
     downurl="https://dl1.instavideosave.com/?url="
-    with requests.Session() as s:
-        s.headers.update({
-            'User-Agent': "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",
-        #"Content-Type":"application/json"
-        })
-        print(s.get("https://instavideosave.net").status_code)
-        headers2=headers
-        headers2.update({
-            "Sec-Ch-Ua":"\"Not-A.Brand\";v=\"99\", \"Chromium\";v=\"124\"",
-            "Sec-Ch-Ua-Mobile":"?1",
-            "Sec-Ch-Ua-Platform":"\"Android\""
-        })
-        s.headers.update({"method":"GET","host":"Heyy Ram"})
-        headers2.update({"Url":ur})
-        #print(r.text,"\n\n\n")
-        t=s.get(url1,headers=headers2)
-        print(t.request.headers)
-        print()
-        print(t.status_code)
-        #q= requests.utils.quote(t.json()["video"][0]["video"],"\n\n\n")
-        print(s.cookies.items())
-        return [str(t.text),str(t.request.headers)]
+    scr="""<script>var downurl='https://dl1.instavideosave.com/?url='; 
+    var ur = '35f91d0ece1ec1b60aea4eb1c27cf17bd5fa181cff937892ec5ef2846210991611e863a769b74d97dfcc7d1d2a9d4005f3d64a768a2ee0c009c54319b3f5ce7c02eea7c8208dde9e6ff0921c4e3f074658b1475ff1cc56821ca6e89d37a98bad';
+    var headers= new Headers();
+    var e={
+    'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 
+    'Connection': 'keep-alive', 'method': 'GET', 
+    'authority': 'backend.instavideosave.com', 
+    'path': '/allinone', 
+    'scheme': 'https', 
+    'Accept-Language': 'en-US,en;q=0.9', 'Cache-Control': 'no-cache', 
+    'Origin':'https://www.instavideosave.net', 
+    'Pragma': 'no-cache', 
+    'Referer': 'https://www.instavideosave.net/', 
+    'Sec-Fetch-Dest': 'empty', 
+    'Sec-Fetch-Mode': 'cors', 
+    'Sec-Fetch-Site': 'cross-site', 
+    'Sec-Ch-Ua': '\"Not-A.Brand\";v=\"99\", \"Chromium\";v=\"124\"', 
+    'Sec-Ch-Ua-Mobile': '?1', 
+    'Sec-Ch-Ua-Platform':'\"Android\"',
+    'User-Agent': "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",
+    "Content-Type":"application/json",
+    "Url":ur};
+    Object.keys(e).forEach(key => {
+    //console.log(key, e[key]);
+    headers.set(key,e[key]);});
+    Object.keys(headers).forEach(key => {
+    console.log(key, headers[key]);
+    })
+    console.log(Object.keys(headers));
+    console.log("eee",Object.keys(e));
+    let url1='https://backend.instavideosave.com/allinone';
+    fetch(url1,{method:'GET',mode:'cors',headers:e})
+    .then(response => response.json())
+    .then(data => {
+    // do whatever you want with data
+    var link=data["video"][0]["video"];
+    console.log(link);
+    window.location.assign(downurl+encodeURIComponent(link)); });
+    //window.fetch(downurl+encodeURIComponent(link));</script>"""
+        return scr
         #print(downurl+q)
   
         #return redirect (downurl+q)
