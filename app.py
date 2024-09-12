@@ -126,7 +126,7 @@ def instavideosave():
     'Sec-Ch-Ua-Platform':'\"Android\"',
     'User-Agent': "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",
     "Content-Type":"application/json",
-    "Url":ur.toString();};
+    "Url":ur};
     
     let url1='https://backend.instavideosave.com/allinone';
     fetch(url1,{method:'GET',mode:'cors',headers:e})
