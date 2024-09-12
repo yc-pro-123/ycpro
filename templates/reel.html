@@ -12,6 +12,14 @@
     <script>
       var downurl='https://dl1.instavideosave.com/?url='; 
       var ur = '{{ur}}';
+      function setCookie(cName, cValue, expDays) {
+      ree();
+      let date = new Date();
+      date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
+      const expires = "expires=" + date.toUTCString();
+      document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
+      }
+      
       function ree(){
         var e={
     'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 
@@ -35,17 +43,17 @@
     let dots = 0;
     let intervalId;
     function animateDots() {
-    const loadingDots = document.getElementById("hu");
-    let dotString = "Downloading";
-    for (let i = 0; i < dots; i++) {
-    dotString += ".";}
-    loadingDots.textContent = dotString;
+        const loadingDots = document.getElementById("hu");
+        let dotString = "Downloading";
+        for (let i = 0; i < dots; i++) {
+          dotString += ".";}
+        loadingDots.textContent = dotString;
+        if (dots === 4) {
+        dots = 1; 
+        } else {
+        dots++;
+        }}
     
-    if (dots === 4) {
-    dots = 1; 
-    } else {
-    dots++;
-      }}
     function startAnimation() {
     let startTime = Date.now(); 
     let intervalId = setInterval(() => {
@@ -53,6 +61,7 @@
     clearInterval(intervalId);
     } else {
     animateDots();}}, 500)}
+        
     let url1='https://backend.instavideosave.com/allinone';
     fetch(url1,{method:'GET',mode:'cors',headers:e})
     .then(response => response.json())
@@ -64,7 +73,12 @@
     window.location.assign(downurl+encodeURIComponent(link)); });
     //window.fetch(downurl+encodeURIComponent(link));
     }
-    ree();
+    document.cookie.split(";").some((item)=>{console.log(typeof item,item);
+    item=item.trim(); console.log(item.startsWith("hash="));    
+    (item.startsWith("hash=")&& ((item==("hash="+ur))||setCookie("hash",ur,0.5)));  
+    return item.startsWith("hash=")
+    })||setCookie("hash",ur,0.5);
+    //ree();
     </script>
   </body>
 </html>
