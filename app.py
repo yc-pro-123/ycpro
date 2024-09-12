@@ -92,8 +92,16 @@ def instavideosave():
     t=key.encode(encoding="utf-8")
     #print("T",list(t),"\n")
     b=data.encode()
-    #print("B",list(b),"\n")
-    s=pad(b,96) #print("S",list(s),"\n")
+    sz=len(b)
+    bs=16
+    for i in range(2,17):
+        if(bs<=sz):
+            bs=i*16
+        else:
+            break;
+    #print("B",list(b),len(b),"\n")
+    s=pad(b,bs)
+    #print("S",list(s),len(s),"\n"
     cipher=AES.new(t,AES.MODE_ECB) 
     #ct_bytes=cipher.encrypt(pad(data,AES.block_size))
     ct_bytes=cipher.encrypt(s) 
