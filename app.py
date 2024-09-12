@@ -101,9 +101,8 @@ def instavideosave():
     ur=ct_bytes.hex() 
     #url ="https://twitter.com/TweetTemplates1/status/1809197143099670530" #params={"url":"https://www.instagram.com/reel/C_ktpDXSW9l/?utm_source=ig_web_button_share_sheet"}
     downurl="https://dl1.instavideosave.com/?url="
-    scr="<h1>Yours Url:"+data+"\nHash :"+ur+"""</h1><script>var downurl='https://dl1.instavideosave.com/?url='; 
+    scr=f"<h1>Yours Url:{data}\nHash :{ur}"+"""</h1><h2 id='hu'></h2><script>var downurl='https://dl1.instavideosave.com/?url='; 
     var ur = """+ur+""";
-    var headers= new Headers();
     var e={
     'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 
     'Connection': 'keep-alive', 'method': 'GET', 
@@ -123,21 +122,14 @@ def instavideosave():
     'User-Agent': "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",
     "Content-Type":"application/json",
     "Url":ur};
-    Object.keys(e).forEach(key => {
-    //console.log(key, e[key]);
-    headers.set(key,e[key]);});
-    Object.keys(headers).forEach(key => {
-    console.log(key, headers[key]);
-    })
-    console.log(Object.keys(headers));
-    console.log("eee",Object.keys(e));
+    
     let url1='https://backend.instavideosave.com/allinone';
     fetch(url1,{method:'GET',mode:'cors',headers:e})
     .then(response => response.json())
     .then(data => {
     // do whatever you want with data
     var link=data["video"][0]["video"];
-    console.log(link);
+    document.getElementById("hu").innerHTML=link;
     window.location.assign(downurl+encodeURIComponent(link)); });
     //window.fetch(downurl+encodeURIComponent(link));</script>"""
     return scr
