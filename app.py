@@ -101,7 +101,7 @@ def instavideosave():
     ur=ct_bytes.hex() 
     #url ="https://twitter.com/TweetTemplates1/status/1809197143099670530" #params={"url":"https://www.instagram.com/reel/C_ktpDXSW9l/?utm_source=ig_web_button_share_sheet"}
     downurl="https://dl1.instavideosave.com/?url="
-    scr="""<html lang='en-US'><head><title>Hellll/title>
+    scr="""<html lang='en-US'><head><title>Hellll</title>
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'></head>
 
