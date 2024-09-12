@@ -107,7 +107,10 @@ def instavideosave():
     </head>
     <body>
     <h1>Yours Url:"""
-    scr=sc+f"{data}\nHash :{ur}</h1><h2 id='hu'>Hshh</h2><script>var downurl='https://dl1.instavideosave.com/?url='; var ur = '{ur}';"+"""
+    scr=sc+f"{data}\nHash :{ur}"+"""</h1>
+    <h2 id='hu'>Hshh</h2>
+    <script>var downurl='https://dl1.instavideosave.com/?url='; """+f"var ur = '{ur}';"
+    scr=scr+"""
     var e={
     'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 
     'Connection': 'keep-alive', 'method': 'GET', 
