@@ -86,12 +86,14 @@ def twitsave():
 @app.route("/i",methods=["GET"])
 def instavideosave():
     args=list(map(str.lower,request.args.keys()))
+    errtxt=""
     if args[0]=="mp3":
         downurl="https://mp3.instavideosave.com/api?url="
     elif args[0]=="mp4":
         downurl="https://dl1.instavideosave.com/?url="
     else:
         downurl=""
+        errtxt=""
         return render_template("ei.html",error=errtxt)
     
     data=request.args.get(args[0])
