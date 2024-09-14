@@ -87,11 +87,12 @@ def twitsave():
 def instavideosave():
     args=list(map(str.lower,request.args.keys()))
     if args[0]=="mp3":
-        downurl="https://dl1.instavideosave.com/?url="
+        downurl="https://mp3.instavideosave.com/api?url="
     elif args[0]=="mp4":
         downurl="https://dl1.instavideosave.com/?url="
     else:
         downurl=""
+        return render_template("ei.html",error=errtxt)
     
     data=request.args.get(args[0])
     data.startswith("https://www.insta") ? data=data : data="https://www.instagram.com/"+data
