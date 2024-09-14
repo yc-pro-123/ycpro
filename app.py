@@ -87,7 +87,7 @@ def twitsave():
 def instavideosave():
     print(type(request.args.keys()))
     
-    args=list(map(lambda x: x.lower(),list(request.args.keys())))
+    args=[word.lower() for word in request.args.keys()]
     
     errtxt=""
     if args[0]=="mp3":
