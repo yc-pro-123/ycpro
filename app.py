@@ -85,8 +85,19 @@ def twitsave():
 
 @app.route("/i",methods=["GET"])
 def instavideosave():
-    ar=request.args.get("i")
-    data="https://www.instagram.com/"+ar
+    args=list(map(str.lower,request.args.keys()))
+    errtxt=""
+    if args[0]=="mp3":
+        downurl="https://mp3.instavideosave.com/api?url="
+    elif args[0]=="mp4":
+        downurl="https://dl1.instavideosave.com/?url="
+    else:
+        downurl=""
+        errtxt=""
+        return render_template("ei.html",error=errtxt)
+    
+    data=request.args.get(args[0])
+    data.startswith("https://www.insta") ? data=data : data="https://www.instagram.com/"+data
     #data="https://www.instagram.com/reel/C_ktpDXSW9l/?utm_source=ig_web_button_share_sheet"
     key ="qwertyuioplkjhgf"
     t=key.encode(encoding="utf-8")
@@ -108,52 +119,8 @@ def instavideosave():
     print(ct_bytes.hex())
     ur=ct_bytes.hex() 
     #url ="https://twitter.com/TweetTemplates1/status/1809197143099670530" #params={"url":"https://www.instagram.com/reel/C_ktpDXSW9l/?utm_source=ig_web_button_share_sheet"}
-    downurl="https://dl1.instavideosave.com/?url="
-    sc="""<!DOCTYPE html><html lang='en-US'><head><title>Hellll</title>
-    <meta charset='utf-8'/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    </head>
-    <body style="font-size:40px;"><div id=container>
-    <h1>Yours Url:"""
-    scr=sc+f"{data}\nHash :{ur}"+"""</h1>
-    <h2 id='hu' style="font-size:35px;">Plz waitt.....</h2>
-    </div>
-    <script>var downurl='https://dl1.instavideosave.com/?url='; """+f"var ur = '{ur}';"
-    scr=scr+"""
-    function ree(){
-    var e={
-    'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 
-    'Connection': 'keep-alive', 'method': 'GET', 
-    'authority': 'backend.instavideosave.com', 
-    'path': '/allinone', 
-    'scheme': 'https', 
-    'Accept-Language': 'en-US,en;q=0.9', 'Cache-Control': 'no-cache', 
-    'Origin':'https://www.instavideosave.net', 
-    'Pragma': 'no-cache', 
-    'Referer': 'https://www.instavideosave.net/', 
-    'Sec-Fetch-Dest': 'empty', 
-    'Sec-Fetch-Mode': 'cors', 
-    'Sec-Fetch-Site': 'cross-site', 
-    'Sec-Ch-Ua': '\"Not-A.Brand\";v=\"99\", \"Chromium\";v=\"124\"', 
-    'Sec-Ch-Ua-Mobile': '?1', 
-    'Sec-Ch-Ua-Platform':'\"Android\"',
-    'User-Agent': "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",
-    "Content-Type":"application/json",
-    "Url":ur};
-    
-    let url1='https://backend.instavideosave.com/allinone';
-    fetch(url1,{method:'GET',mode:'cors',headers:e})
-    .then(response => response.json())
-    .then(data => {
-    var link=data["video"][0]["video"];
-    document.getElementById("hu").innerHTML="Downloading....";
-    console.log(data);
-    window.location.assign(downurl+encodeURIComponent(link)); });
-    //window.fetch(downurl+encodeURIComponent(link));
-    }
-    ree();
-    </script></body>"""
-    return render_template("reel.html",data=data,ur=ur)
+    #downurl="https://dl1.instavideosave.com/?url="
+    return render_template("reel.html",type=args[0], downurl=downurl,data=data,ur=ur)
     
 
 #return redirect (downurl+q)
