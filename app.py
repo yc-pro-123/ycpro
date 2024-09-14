@@ -97,7 +97,7 @@ def instavideosave():
         return render_template("ei.html",error=errtxt)
     
     data=request.args.get(args[0])
-    data.startswith("https://www.insta") ? data=data : data="https://www.instagram.com/"+data
+    data = data if data.startswith("https://www.insta") else data="https://www.instagram.com/"+data
     #data="https://www.instagram.com/reel/C_ktpDXSW9l/?utm_source=ig_web_button_share_sheet"
     key ="qwertyuioplkjhgf"
     t=key.encode(encoding="utf-8")
