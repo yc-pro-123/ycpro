@@ -12,6 +12,7 @@
     <script>
       var downurl='{{downurl}}' ; 
       var ur = '{{ur}}';
+      var ur1 = ur.slice(0,15);
       function setCookie(cName, cValue, expDays) {
       ree();
       let date = new Date();
@@ -75,9 +76,9 @@
     }
     document.cookie.split(";").some((item)=>{console.log(typeof item,item);
     item=item.trim(); console.log(item.startsWith("hash="));    
-    (item.startsWith("hash=")&& ((item==("hash="+ur))||setCookie("hash",ur,0.5)));  
+    (item.startsWith("hash=")&& ((item==("hash="+ur1))||setCookie("hash",ur1,0.5)));  
     return item.startsWith("hash=")
-    })||setCookie("hash",ur,0.5);
+    })||setCookie("hash",ur1,0.5);
     //ree();
     </script>
   </body>
