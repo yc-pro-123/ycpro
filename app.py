@@ -63,7 +63,7 @@ def submit():
 @app.route('/t',methods=['GET'])
 def twitsave():
     data=request.args.get("t")
-    data = data if (data.startswith("https://x.com") or data.startswith("https://twitter")) else "https://www.x.com/"+data
+    data = data if (data.startswith("https://x.com") or data.startswith("https://twitter")) else "https://.x.com/"+data
     
     print("Hey",data)
     #url ="https://twitter.com/TweetTemplates1/status/1809197143099670530"
