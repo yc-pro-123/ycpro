@@ -75,7 +75,7 @@ def twitsave():
         if data[8]=="x":
             data="https://twitter."+data[data.index("com"):data.index("?")]+"/video/1"
             print("Embedding", data)
-        return redirect(data)
+        return data
     if args[0]!="t":
         errt="Sorry !"
         return render_template("ei.html",error=errt)
