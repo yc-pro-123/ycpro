@@ -76,7 +76,7 @@ def twitsave():
             data="https://twitter."+data[data.index("com"):data.index("?")]+"/video/1"
             print("Embedding", data)
         return redirect(data)
-    if !(args[0]=="t"):
+    if args[0]n="t":
         errt="Sorry !"
         return render_template("ei.html",error=errt)
     #url ="https://twitter.com/TweetTemplates1/status/1809197143099670530"
