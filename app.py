@@ -62,10 +62,23 @@ def submit():
 
 @app.route('/t',methods=['GET'])
 def twitsave():
-    data=request.args.get("t")
+    print(type(request.args.keys()))
+    
+    args=[word.lower() for word in request.args.keys()]
+    
+    data=request.args.get(args[0])
     data = data if (data.startswith("https://x.com") or data.startswith("https://twitter")) else "https://.x.com/"+data
     
     print("Hey",data)
+    if args[0]=="e":
+        print(data)
+        if data[8]=="x":
+            data="https://twitter."+data[data.index("com"):data.index("?")]+"/video/1"
+            print("Embedding", data)
+        return redirect(data)
+    if !(args[0]=="t"):
+        errt="Sorry !"
+        return render_template("ei.html",error=errt)
     #url ="https://twitter.com/TweetTemplates1/status/1809197143099670530"
     params={"url": data
  #juz_scrolling/status/1831187338044858686?t=hyBxg6bqJh6X9HlVPdP7ng&s=19"
