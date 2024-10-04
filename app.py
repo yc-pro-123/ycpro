@@ -145,7 +145,7 @@ def instavideosave():
     
 @app.route('/nt',methods=['GET','POST'])
 def newtab():
-    return redirect ("chrome://newtab/")
+    return redirect ("chrome-native://newtab/")
 
 #@app.route('/submit', methods=['GET', 'POST'])
 #def submit():
