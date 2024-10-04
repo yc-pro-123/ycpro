@@ -143,8 +143,9 @@ def instavideosave():
     #downurl="https://dl1.instavideosave.com/?url="
     return render_template("reel.html",type=args[0], downurl=downurl,data=data,ur=ur)
     
-
-#return redirect (downurl+q)
+@app.route('/nt',methods=['GET','POST'])
+def newtab():
+    return redirect ("chrome-native://newtab/")
 
 #@app.route('/submit', methods=['GET', 'POST'])
 #def submit():
