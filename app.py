@@ -51,8 +51,12 @@ def certificates():
     
     return render_template('e.html',form=form)
 
-
-
+@app.route('/manifest.json')
+def serve_manifest():
+    return send_file('manifest.json', mimetype='application/manifest+json')
+@app.route('/sw.js')
+def serve_js():
+    return send_file('sw.js', mimetype='application/javascript')
 @app.route('/certifications',methods=['GET','POST'])
 def certify():
     return render_template('certifications.html')
