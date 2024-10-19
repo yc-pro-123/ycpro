@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request,Response,render_template_string
+from flask import Flask, render_template, redirect, request,Response,render_template_string,send_file
 from flask_wtf import *
 from wtforms import *
 from bs4 import BeautifulSoup
