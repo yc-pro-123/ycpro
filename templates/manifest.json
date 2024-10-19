@@ -5,6 +5,16 @@
   "scope": "/",
   "display": "standalone",
   "theme_color": "#317EFB",
+  "share_target":
+  {
+    "action": "/share",
+    "params":
+    {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
   "background_color": "#317EFB",
   "icons": [
 		{
