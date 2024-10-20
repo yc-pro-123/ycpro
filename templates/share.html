@@ -24,12 +24,13 @@
  window.addEventListener('load', (event) => {
   // Your code to run after the page has fully loaded
   const url = new URL(document.location);
-  const sharedDescription = url.searchParams.get("text");
+  const sharedDe = url.searchParams.get("text");
   const sharedLink = url.searchParams.get("link");
   //document.getElementById('hello').innerHTML = text+"/n"+link;
   //var url1=new URL("https://kainikhil.medium.com/smooth-scroll-to-a-section-in-your-medium-article-1c0f216a6041");
-  var url1=new URL(sharedLink);
-  alert(url1);
+  alert("Text:"+sharedDe+"\nLink"+sharedLink);
+   var url1=new URL(sharedLink);
+  
   document.getElementById('hello').innerHTML = url1.hostname;
   var p = document.createElement('p');
   p.innerHTML = url1.pathname;
