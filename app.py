@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request,Response,render_template_string,send_file
+from flask import Flask, render_template, redirect, request,Response,render_template_string,send_file,send_from_directory
 from flask_wtf import *
 from wtforms import *
 from bs4 import BeautifulSoup
@@ -53,10 +53,15 @@ def certificates():
 
 @app.route('/manifest.json')
 def serve_manifest():
-    return send_file('manifest.json', mimetype='application/manifest+json')
+    #return send_file('manifest.json', mimetype='application/manifest+json')
+    return send_from_directory(
+        app.config['Files'], name)
 @app.route('/sw.js')
 def serve_js():
-    return send_file('sw.js', mimetype='application/javascript')
+    #return send_file('sw.js', mimetype='application/javascript')
+    return send_from_directory(
+        app.config['Files'], name)
+
 @app.route('/certifications',methods=['GET','POST'])
 def certify():
     return render_template('certifications.html')
