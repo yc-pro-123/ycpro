@@ -54,8 +54,7 @@ def certificates():
 @app.route('/manifest.json')
 def serve_manifest():
     #return send_file('manifest.json', mimetype='application/manifest+json')
-    return send_from_directory(
-        app.config['Files'], name)
+    return send_from_directory('Files','manifest.json')
 @app.route('/sw.js')
 def serve_js():
     #return send_file('sw.js', mimetype='application/javascript')
