@@ -3,7 +3,7 @@
   "short_name": "app",
   "start_url": "/",
   "scope": "/",
-  "display": "standalone",
+  "display": "browser",
   "theme_color": "#317EFB",
   "share_target":
   {
