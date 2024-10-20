@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Share Medium</title>
+  <link rel="icon" href="{{url_for('static', filename='icons/icon-144x144.png')}}" type="image/png">
+  <link rel="icon" href="{{url_for('static', filename='icons/icon-192x192.png')}}" type="image/png">
+  <link rel="icon" href="{{url_for('static', filename='icons/icon-512x512.png')}}" type="image/png">
+  <link rel="icon" href="{{url_for('static', filename='icons/icon-96x96.png')}}" type="image/png">
+  <link rel="icon" href="{{url_for('static', filename='icons/icon-128x128.png')}}" type="image/png">
+  <link rel="apple-touch-icon" href="{{url_for('static', filename='icons/icon-96x96.png')}}" type="image/png">
+  <link rel="apple-touch-icon" href="{{url_for('static', filename='icons/icon-128x128.png')}}" type="image/png">
+  <link rel="apple-touch-icon" href="{{url_for('static', filename='icons/icon-144x144.png')}}" type="image/png">
+  <link rel="apple-touch-icon" href="{{url_for('static', filename='icons/icon-192x192.png')}}" type="image/png">
+  <link rel="apple-touch-icon" href="{{url_for('static', filename='icons/icon-512x512.png')}}" type="image/png">
+</head>
+<body>
+   <h1 id ="hello">
+    Hello, World!
+  </h1>
+ <script>
+ window.addEventListener('load', (event) => {
+  // Your code to run after the page has fully loaded
+  const url = new URL(document.location);
+  const sharedDescription = url.searchParams.get("text");
+  const sharedLink = url.searchParams.get("link");
+  //document.getElementById('hello').innerHTML = text+"/n"+link;
+  //var url1=new URL("https://kainikhil.medium.com/smooth-scroll-to-a-section-in-your-medium-article-1c0f216a6041");
+  var url1=new URL(sharedLink);
+  alert(url1);
+  document.getElementById('hello').innerHTML = url1.hostname;
+  var p = document.createElement('p');
+  p.innerHTML = url1.pathname;
+  document.body.appendChild(p);   
+  console.log('Page is fully loaded');
+  if(confirm("wanna read this article")){
+  var A =new URL(url1.pathname,"https://readmedium.com");
+  console.log(A);
+  window.location.href=A;
+   }
+});
+  </script>
+
+</body>
+
+</html>
