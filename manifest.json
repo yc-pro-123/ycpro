@@ -1,10 +1,10 @@
 {
-  "name": "Personal Pro",
+  "name": "Read Bro",
   "short_name": "app",
   "start_url": "/",
   "scope": "/",
-  "display": "browser",
-  "theme_color": "#317EFB",
+  "display": "standalone",
+  "theme_color": "#121212",
   "share_target":
   {
     "action": "/share",
