@@ -29,15 +29,15 @@
   //document.getElementById('hello').innerHTML = text+"/n"+link;
   //var url1=new URL("https://kainikhil.medium.com/smooth-scroll-to-a-section-in-your-medium-article-1c0f216a6041");
   let res = sharedDe.split(" ").find(word => word.startsWith("http"));
-  alert("Text:"+sharedDe+"\nLink"+res);
-  var url1=new URL(res);
+  //alert("Text:"+sharedDe+"\nLink: "+res);
   
+  var url1=new URL(res);
   document.getElementById('hello').innerHTML = url1.hostname;
   var p = document.createElement('p');
   p.innerHTML = url1.pathname;
   document.body.appendChild(p);   
   console.log('Page is fully loaded');
-  if(confirm("wanna read this article")){
+  if(confirm("Is this article from Medium, if yes would you wanna read it ?")){
   var A =new URL(url1.pathname,"https://readmedium.com");
   console.log(A);
   window.location.href=A;
