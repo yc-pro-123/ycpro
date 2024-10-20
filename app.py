@@ -63,7 +63,10 @@ def certify():
 @app.route('/me', methods=['GET', 'POST'])
 def submit():
     return redirect("https://github.com/yc-pro-123")
-
+@app.route('/share', methods=['GET', 'POST'])
+def share():
+    return render_template('share.html')
+                
 @app.route('/t',methods=['GET'])
 def twitsave():
     print(type(request.args.keys()))
