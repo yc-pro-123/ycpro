@@ -58,8 +58,7 @@ def serve_manifest():
 @app.route('/sw.js')
 def serve_js():
     #return send_file('sw.js', mimetype='application/javascript')
-    return send_from_directory(
-        app.config['Files'], name)
+    return send_from_directory('Files','sw.js')
 
 @app.route('/certifications',methods=['GET','POST'])
 def certify():
